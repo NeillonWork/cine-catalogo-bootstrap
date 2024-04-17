@@ -1,8 +1,11 @@
-
+import RoutesApp from "./routes";
 
 function App() {
   return (
-<div>OLA</div>
+    <div>
+      {" "}
+      <RoutesApp />
+    </div>
   );
 }
 
