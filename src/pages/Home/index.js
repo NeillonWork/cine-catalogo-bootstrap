@@ -71,7 +71,7 @@ function Home() {
                   style={{ backgroundColor: "#8db986" }}
                 >
                   <Link
-                    to={`/filmes/${filmes.id}`}
+                    to={`/filmes/${filme.id}`}
                     className="btn btn-success justify-content-md-end"
                   >
                     Ver detalhes
