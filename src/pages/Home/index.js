@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   const [filmes, setFilmes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadFilmes() {
@@ -24,20 +25,28 @@ function Home() {
 
       setFilmes(response.data.results.slice(0, 10));
       console.log(response.data.results.slice(0, 10));
+      setLoading(false);
     }
 
     loadFilmes();
   }, []);
 
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center">
+        <h1 className="">Carreagando Filmes...</h1>
+      </div>
+    );
+  }
+
   function truncateText(text, maxLength) {
-    const words = text.split(' ');
+    const words = text.split(" ");
     if (words.length > maxLength) {
-      return words.slice(0, maxLength).join(' ') + '...';
+      return words.slice(0, maxLength).join(" ") + "...";
     } else {
       return text;
     }
   }
-
 
   return (
     <div className="container">
@@ -53,7 +62,9 @@ function Home() {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{filme.title}</h5>
-                  <p className="card-text">{truncateText(filme.overview, 50)}</p>
+                  <p className="card-text">
+                    {truncateText(filme.overview, 50)}
+                  </p>
                 </div>
                 <div
                   className="card-footer text-center"
