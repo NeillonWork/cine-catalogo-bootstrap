@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark p-3 mb-5" style={{backgroundColor:"#373737"}}>
+    <nav className="navbar navbar-expand-lg navbar-dark p-3 fixed-top" style={{backgroundColor:"#373737"}}>
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
           Cine Catalogo

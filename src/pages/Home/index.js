@@ -23,8 +23,8 @@ function Home() {
         },
       });
 
-      setFilmes(response.data.results.slice(0, 10));
-      console.log(response.data.results.slice(0, 10));
+      setFilmes(response.data.results.slice(0, 12));
+      console.log(response.data.results.slice(0, 12));
       setLoading(false);
     }
 
@@ -39,17 +39,8 @@ function Home() {
     );
   }
 
-  function truncateText(text, maxLength) {
-    const words = text.split(" ");
-    if (words.length > maxLength) {
-      return words.slice(0, maxLength).join(" ") + "...";
-    } else {
-      return text;
-    }
-  }
-
   return (
-    <div className="container">
+    <div className="container mt-5 " style={{ paddingTop: "4rem" }}>
       <div className="row">
         {filmes.map((filme) => {
           return (
@@ -60,12 +51,6 @@ function Home() {
                   className="card-img-top"
                   alt={filme.title}
                 />
-                <div className="card-body">
-                  <h5 className="card-title">{filme.title}</h5>
-                  <p className="card-text">
-                    {truncateText(filme.overview, 50)}
-                  </p>
-                </div>
                 <div
                   className="card-footer text-center"
                   style={{ backgroundColor: "#8db986" }}

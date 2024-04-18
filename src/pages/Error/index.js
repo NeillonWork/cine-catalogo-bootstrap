@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Error() {
   return (
-    <div className="container d-flex justify-content-center">
+    <div className="container d-flex justify-content-center mt-5" style={{ paddingTop: "4rem" }}>
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">404 - Essa pagina nao existe</h1>
