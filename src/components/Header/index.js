@@ -37,10 +37,10 @@ function Header() {
             <li className="nav-item">
               <Link
                 to="/filmes"
-                className="nav-link active"
+                className="nav-link disabled"
                 aria-current="page"
               >
-                <i class="bi bi-play-btn text-success"></i> Filmes
+                <i class="bi bi-play-btn text-success"></i> Filme
               </Link>
             </li>
           </ul>
