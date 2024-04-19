@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark p-3 fixed-top" style={{backgroundColor:"#373737"}}>
+    <nav
+      className="navbar navbar-expand-lg navbar-dark p-3 fixed-top"
+      style={{ backgroundColor: "#373737" }}
+    >
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
           Cine Catalogo
@@ -22,7 +25,7 @@ function Header() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link to="/" className="nav-link active" aria-current="page">
-                <i class="bi bi-house text-success"/> Home
+                <i class="bi bi-house text-success" /> Home
               </Link>
             </li>
             <li className="nav-item">
@@ -31,7 +34,7 @@ function Header() {
                 className="nav-link disabled"
                 aria-current="page"
               >
-               <i class="bi bi-card-checklist text-success"></i> Favoritos
+                <i class="bi bi-card-checklist text-success"></i> Favoritos
               </Link>
             </li>
             <li className="nav-item">
@@ -45,17 +48,16 @@ function Header() {
             </li>
           </ul>
 
-          <form className="d-flex" role="search">
-          <li className="nav-item">
-              <Link
-                to="/filmes"
-                type="button" class="btn btn-success"
-                aria-current="page"
-              >
-                <i class="bi bi-bookmark-dash"></i> Adicionar ao catalogo
-              </Link>
-            </li>
-          </form>
+          <div className="d-flex">
+            <Link
+              to="/filmes"
+              type="button"
+              class="btn btn-success"
+              aria-current="page"
+            >
+              <i class="bi bi-bookmark-dash"></i> Adicionar ao catalogo
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

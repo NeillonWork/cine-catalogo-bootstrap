@@ -40,7 +40,7 @@ function Home() {
   }
 
   return (
-    <div className="container mt-5 " style={{ paddingTop: "4rem" }}>
+    <div className="container mt-5 mb-5" style={{ paddingTop: "4rem" }}>
       <div className="row">
         {filmes.map((filme) => {
           return (

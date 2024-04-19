@@ -31,8 +31,8 @@ function Filme() {
   }
 
   return (
-    <div className="container mt-5" style={{ paddingTop: "4rem" }}>
-      <div class="card mb-3">
+    <div className="container mt-5 mb-5" style={{ paddingTop: "4rem" }}>
+      <div class="card">
         <img
           class="card-img-top"
           src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`}
