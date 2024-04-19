@@ -28,7 +28,7 @@ function Header() {
             <li className="nav-item">
               <Link
                 to="/favoritos"
-                className="nav-link active"
+                className="nav-link disabled"
                 aria-current="page"
               >
                <i class="bi bi-card-checklist text-success"></i> Favoritos
