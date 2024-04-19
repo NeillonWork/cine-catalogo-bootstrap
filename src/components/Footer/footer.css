@@ -1,0 +1,46 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #373737;
+  color: #efeae4;
+  padding: 20px 0;
+}
+
+.rodape {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gitlogo {
+  max-width: 24px;
+}
+
+.feito-por {
+  font-size: 1.2em;
+}
+
+.autor {
+  color: #8db986;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.autor:hover {
+  color: #acce91;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Home from "./pages/Home";
 import Header from "./components/Header";
+import Home from "./pages/Home";
 import Error from "./pages/Error";
 import Favoritos from "./pages/Favoritos";
 import Filmes from "./pages/Filmes";
+import Footer from "./components/Footer";
 
 function RoutesApp() {
   return (
@@ -17,6 +17,7 @@ function RoutesApp() {
           <Route path="/filmes/:id" element={<Filmes/>} />
           <Route path="*" element={<Error />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
