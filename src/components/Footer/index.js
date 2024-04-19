@@ -10,7 +10,7 @@ function Rodape() {
           src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
           alt=""
         />
-        <span className="feito-por">Feito por</span>
+        <span className="feito-por">Desenvolvido por</span>
         <Link to="https://github.com/NeillonWork" className="autor">
           NeillonWork
         </Link>

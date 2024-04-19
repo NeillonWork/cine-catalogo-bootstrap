@@ -45,7 +45,7 @@ function Home() {
         {filmes.map((filme) => {
           return (
             <div key={filme.id} className="col-sm-3 mb-3">
-              <div className="card" style={{ width: "20rem" }}>
+              <div className="card" >
                 <img
                   src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
                   className="card-img-top"
