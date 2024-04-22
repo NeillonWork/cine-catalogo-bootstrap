@@ -1,11 +1,45 @@
-function Favoritos(){
+import { useEffect, useState } from "react";
 
-    return(
-        <div>
-            <h1>Pagina de favoritos</h1>
+function Favoritos() {
+  const [filmes, setFilmes] = useState([]);
 
-        </div>
-    );
-};
+  useEffect(() => {
+    function ListaFilmes() {
+      const recuperaLista = localStorage.getItem("@cineCatalogo");
+      setFilmes(JSON.parse(recuperaLista));
+    }
+
+    ListaFilmes();
+  }, []);
+
+  return (
+    <div className="container mt-5 mb-5" style={{ paddingTop: "4rem" }}>
+      <h1 className="mb-5">Meus favoritos</h1>
+      <div className="row">
+        {filmes.map((filme) => {
+          return (
+            <div key={filme.id} className="col-sm-3 mb-3">
+              <div className="card">
+                <img
+                  src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
+                  className="card-img-top"
+                  alt={filme.title}
+                />
+                <div className="card-body">
+                  <p>.....</p>
+                </div>
+                <div className="card-footer d-grid gap-2 d-md-flex justify-content-md-end">
+                  <button className="btn btn-outline-danger btn-sm justify-end">
+                    Remover
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 export default Favoritos;

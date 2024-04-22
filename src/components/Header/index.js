@@ -35,7 +35,7 @@ function Header() {
                 aria-current="page"
               >
                 <i class="bi bi-card-checklist text-success"></i> Favoritos
-              </Link>
+              </Link >
             </li>
             <li className="nav-item">
               <Link
@@ -50,7 +50,7 @@ function Header() {
 
           <div className="d-flex">
             <Link
-              to="/filmes"
+              to="/favoritos"
               type="button"
               class="btn btn-success"
               aria-current="page"
