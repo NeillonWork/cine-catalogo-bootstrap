@@ -55,7 +55,7 @@ function Header() {
               class="btn btn-success"
               aria-current="page"
             >
-              <i class="bi bi-bookmark-dash"></i> Adicionar ao catalogo
+              <i class="bi bi-camera-reels"></i> Meus favoritos
             </Link>
           </div>
         </div>

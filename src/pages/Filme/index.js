@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function Filme() {
   const { id } = useParams();
@@ -31,6 +32,37 @@ function Filme() {
     loadFilme();
   }, [id, navegate]);
 
+  function filmesSalvos() {
+    const minhaLista = localStorage.getItem("@cineCatalogo");
+    let filmeSalvo = JSON.parse(minhaLista) || [];
+
+    const verificaLista = filmeSalvo.some(
+      (filmeSalvo) => filmeSalvo.id === filme.id
+    );
+
+    if (verificaLista) {
+      Swal.fire({
+        title: `${filme.title}`,
+        text: "Já existe em sua lista",
+        icon: "error",
+        showConfirmButton: false,
+        timer: 3000,
+      });
+      return;
+    }
+
+    filmeSalvo.push(filme);
+    localStorage.setItem("@cineCatalogo", JSON.stringify(filmeSalvo));
+
+    Swal.fire({
+      title: `${filme.title}`,
+      text: "Salvo em sua lista de favoritos!",
+      icon: "success",
+      showConfirmButton: false,
+      timer: 3000,
+    });
+  }
+
   if (loading) {
     return (
       <div className="container mt-5 mb-5">
@@ -58,7 +90,11 @@ function Filme() {
           </p>
 
           <div className="d-grid gap-2 d-md-block">
-            <button className="btn btn-outline-success" type="button">
+            <button
+              onClick={filmesSalvos}
+              className="btn btn-outline-success"
+              type="button"
+            >
               Salvar
             </button>
             <a
