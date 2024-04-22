@@ -28,15 +28,6 @@ function Header() {
                 <i class="bi bi-house text-success" /> Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/favoritos"
-                className="nav-link"
-                aria-current="page"
-              >
-                <i class="bi bi-camera-reels text-success"></i> Favoritos
-              </Link >
-            </li>
           </ul>
 
           <div className="d-flex">

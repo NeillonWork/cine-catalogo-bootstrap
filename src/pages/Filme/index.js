@@ -73,6 +73,7 @@ function Filme() {
 
   return (
     <div className="container mt-5 mb-5" style={{ paddingTop: "4rem" }}>
+      <h1 className="mb-5"><i class="bi bi-search text-success"></i> Detalhes - {filme.title}</h1>
       <div className="card">
         <img
           className="card-img-top"
@@ -95,7 +96,7 @@ function Filme() {
               className="btn btn-outline-success"
               type="button"
             >
-              Salvar
+              <i class="bi bi-check-lg"></i> Salvar
             </button>
             <a
               target="blank"
@@ -103,7 +104,7 @@ function Filme() {
               className="btn btn-outline-primary m-1"
               href={`https://youtube.com/results?search_query=${filme.title} Trailer`}
             >
-              Trailer
+              <i class="bi bi-youtube text-danger"></i> Trailer
             </a>
           </div>
         </div>
