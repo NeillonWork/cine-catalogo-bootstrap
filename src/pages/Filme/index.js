@@ -61,9 +61,14 @@ function Filme() {
             <button className="btn btn-outline-success" type="button">
               Salvar
             </button>
-            <button className="btn btn-outline-primary m-1" type="button">
+            <a
+              target="_blank"
+              rel="external"
+              className="btn btn-outline-primary m-1"
+              href={`https://youtube.com/results?search_query=${filme.title} Trailer`}
+            >
               Trailer
-            </button>
+            </a>
           </div>
         </div>
       </div>
