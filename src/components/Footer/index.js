@@ -3,7 +3,7 @@ import "./footer.css";
 
 function Rodape() {
   return (
-    <footer className="d-flex justify-content-center fixed-bottom bg-body-tertiary">
+    <footer className="d-flex justify-content-center">
       <span className="rodape">
         <img
           className="gitlogo"

@@ -29,9 +29,9 @@ function Favoritos() {
                   <p>.....</p>
                 </div>
                 <div className="card-footer d-grid gap-2 d-md-flex justify-content-md-end">
-                <button className="btn btn-outline-success btn-sm justify-end">
+                <a href={`/filme/${filme.id}`} className="btn btn-outline-success btn-sm justify-end">
                     Ver detalhes
-                  </button>
+                  </a>
                   <button className="btn btn-outline-danger btn-sm justify-end">
                     Remover
                   </button>
