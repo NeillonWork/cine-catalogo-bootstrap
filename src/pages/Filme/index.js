@@ -62,7 +62,7 @@ function Filme() {
               Salvar
             </button>
             <a
-              target="_blank"
+              target="blank"
               rel="external"
               className="btn btn-outline-primary m-1"
               href={`https://youtube.com/results?search_query=${filme.title} Trailer`}
