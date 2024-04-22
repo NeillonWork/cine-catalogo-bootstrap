@@ -31,20 +31,11 @@ function Header() {
             <li className="nav-item">
               <Link
                 to="/favoritos"
-                className="nav-link disabled"
+                className="nav-link"
                 aria-current="page"
               >
-                <i class="bi bi-card-checklist text-success"></i> Favoritos
+                <i class="bi bi-camera-reels text-success"></i> Favoritos
               </Link >
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/filmes"
-                className="nav-link disabled"
-                aria-current="page"
-              >
-                <i class="bi bi-play-btn text-success"></i> Filme
-              </Link>
             </li>
           </ul>
 

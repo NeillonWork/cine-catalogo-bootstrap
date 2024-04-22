@@ -6,7 +6,7 @@ function Favoritos() {
   useEffect(() => {
     function ListaFilmes() {
       const recuperaLista = localStorage.getItem("@cineCatalogo");
-      setFilmes(JSON.parse(recuperaLista));
+      setFilmes(JSON.parse(recuperaLista) || []);
     }
 
     ListaFilmes();
@@ -14,7 +14,7 @@ function Favoritos() {
 
   return (
     <div className="container mt-5 mb-5" style={{ paddingTop: "4rem" }}>
-      <h1 className="mb-5">Meus favoritos</h1>
+      <h1 className="mb-5"><i class="bi bi-camera-reels text-success"></i> Meus favoritos</h1>
       <div className="row">
         {filmes.map((filme) => {
           return (
@@ -29,6 +29,9 @@ function Favoritos() {
                   <p>.....</p>
                 </div>
                 <div className="card-footer d-grid gap-2 d-md-flex justify-content-md-end">
+                <button className="btn btn-outline-success btn-sm justify-end">
+                    Ver detalhes
+                  </button>
                   <button className="btn btn-outline-danger btn-sm justify-end">
                     Remover
                   </button>
