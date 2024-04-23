@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function Favoritos() {
   const [filmes, setFilmes] = useState([]);
@@ -18,7 +19,13 @@ function Favoritos() {
       return filme.id !== id;
     });
     setFilmes(verificaFilme);
-    alert(`FILME ${id} retirado da lista`);
+
+    Swal.fire({
+      title: "Filme removido dos favoritos",
+      icon: "error",
+      showConfirmButton: false,
+      timer: 3000,
+    });
 
     localStorage.setItem("@cineCatalogo", JSON.stringify(verificaFilme));
   }
@@ -33,7 +40,7 @@ function Favoritos() {
           <thead>
             <tr>
               <th>Titulo</th>
-              <th>Ações</th>
+              <th className="text-center" >Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -42,13 +49,14 @@ function Favoritos() {
                 <tr key={filme.id}>
                   <th>{filme.title}</th>
                   <th>
-                    <div className="d-grid d-md-flex justify-content-md-start">
-                      <button
-                        className="btn btn-outline-success btn-sm me-md-2 "
+                    <div className="d-grid d-md-flex justify-content-md-center gap-2">
+                      <Link
+                      to={`/filme/${filme.id}`}
+                        className="btn btn-outline-success btn-sm me-md-2"
                         type="button"
                       >
                         Detalhes
-                      </button>
+                      </Link>
                       <button
                       onClick={()=> removeFilme(filme.id)}
                         className="btn btn-outline-danger btn-sm"
