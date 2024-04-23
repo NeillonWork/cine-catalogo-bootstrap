@@ -14,7 +14,7 @@ function Favoritos() {
 
   return (
     <div className="container mt-5 mb-5" style={{ paddingTop: "4rem" }}>
-      <h1 className="mb-5"><i class="bi bi-camera-reels text-success"></i> Meus favoritos</h1>
+      <h1 className="mb-5"><i className="bi bi-camera-reels text-success"></i> Meus favoritos</h1>
       <div className="row">
         {filmes.map((filme) => {
           return (

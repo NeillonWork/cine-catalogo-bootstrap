@@ -25,7 +25,7 @@ function Header() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link to="/" className="nav-link active" aria-current="page">
-                <i class="bi bi-house text-success" /> Home
+                <i className="bi bi-house text-success" /> Home
               </Link>
             </li>
           </ul>
@@ -34,10 +34,10 @@ function Header() {
             <Link
               to="/favoritos"
               type="button"
-              class="btn btn-success"
+              className="btn btn-success"
               aria-current="page"
             >
-              <i class="bi bi-camera-reels"></i> Meus favoritos
+              <i className="bi bi-camera-reels"></i> Meus favoritos
             </Link>
           </div>
         </div>
