@@ -12,9 +12,21 @@ function Favoritos() {
     ListaFilmes();
   }, []);
 
+  function removeFilme(id) {
+    let verificaFilme = filmes.filter((filme) => {
+      return filme.id !== id;
+    });
+    setFilmes(verificaFilme);
+    alert(`FILME ${id} retirado da lista`);
+
+    localStorage.setItem("@cineCatalogo", JSON.stringify(verificaFilme));
+  }
+
   return (
     <div className="container mt-5 mb-5" style={{ paddingTop: "4rem" }}>
-      <h1 className="mb-5"><i className="bi bi-camera-reels text-success"></i> Meus favoritos</h1>
+      <h1 className="mb-5">
+        <i className="bi bi-camera-reels text-success"></i> Meus favoritos
+      </h1>
       <div className="row">
         {filmes.map((filme) => {
           return (
@@ -29,10 +41,18 @@ function Favoritos() {
                   <p>.....</p>
                 </div>
                 <div className="card-footer d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href={`/filme/${filme.id}`} className="btn btn-outline-success btn-sm justify-end">
+                  <a
+                    href={`/filme/${filme.id}`}
+                    className="btn btn-outline-success btn-sm justify-end"
+                  >
                     Ver detalhes
                   </a>
-                  <button className="btn btn-outline-danger btn-sm justify-end">
+                  <button
+                    onClick={() => {
+                      removeFilme(filme.id);
+                    }}
+                    className="btn btn-outline-danger btn-sm justify-end"
+                  >
                     Remover
                   </button>
                 </div>
