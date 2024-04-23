@@ -50,6 +50,7 @@ function Favoritos() {
                         Detalhes
                       </button>
                       <button
+                      onClick={()=> removeFilme(filme.id)}
                         className="btn btn-outline-danger btn-sm"
                         type="button"
                       >
