@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Favoritos() {
   const [filmes, setFilmes] = useState([]);
@@ -28,38 +29,39 @@ function Favoritos() {
         <i className="bi bi-camera-reels text-success"></i> Meus favoritos
       </h1>
       <div className="row">
-        {filmes.map((filme) => {
-          return (
-            <div key={filme.id} className="col-sm-3 mb-3">
-              <div className="card">
-                <img
-                  src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
-                  className="card-img-top"
-                  alt={filme.title}
-                />
-                <div className="card-body">
-                  <p>.....</p>
-                </div>
-                <div className="card-footer d-grid gap-2 d-md-flex justify-content-md-end">
-                  <a
-                    href={`/filme/${filme.id}`}
-                    className="btn btn-outline-success btn-sm justify-end"
-                  >
-                    Ver detalhes
-                  </a>
-                  <button
-                    onClick={() => {
-                      removeFilme(filme.id);
-                    }}
-                    className="btn btn-outline-danger btn-sm justify-end"
-                  >
-                    Remover
-                  </button>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        <table className="table table-dark table-hover table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Titulo</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filmes.map((filme) => {
+              return (
+                <tr key={filme.id}>
+                  <th>{filme.title}</th>
+                  <th>
+                    <div className="d-grid d-md-flex justify-content-md-start">
+                      <button
+                        className="btn btn-outline-success btn-sm me-md-2 "
+                        type="button"
+                      >
+                        Detalhes
+                      </button>
+                      <button
+                        className="btn btn-outline-danger btn-sm"
+                        type="button"
+                      >
+                        Excluir
+                      </button>
+                    </div>
+                  </th>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
   );
